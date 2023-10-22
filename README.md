@@ -1,2 +1,2 @@
 # GraphDB
-Graph Database Project
+Graph Database Project: LinkedIn Job Postings
