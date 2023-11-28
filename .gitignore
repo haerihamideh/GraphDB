@@ -1,1 +1,2 @@
-job_postings.ttl
+*.ttl
+.DS_Store
