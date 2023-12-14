@@ -30,7 +30,7 @@ By following these steps, you can efficiently work with the provided data for th
 
 ## 1. Ontology
 
-In this project, I am developing an ontology related to LinkedIn Job Postings. The objective is to utilize Python along with the `rdflib` and [additional_packages] packages to convert the output to `.ttl` format for utilization within a graph database.
+In this project, We are developing an ontology related to LinkedIn Job Postings. The objective is to utilize Python along with the `rdflib` and `pandas` packages to convert the output to `.ttl` format for utilization within a graph database.
 
 ### Data Description:
 
