@@ -1,0 +1,38 @@
+4- list of companies with max number of employee in each industry in US 
+
+"
+PREFIX lnjp: <http://www.dei.unipd.it/database2/LinkedinJobPosting#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX countries: <http://eulersharp.sourceforge.net/2003/03swap/countries#>
+
+select ?companyName ?industry_name ?employee_count
+where{
+   ?company lnjp:hasIndustry ?Industry.
+		    ?company a lnjp:Company;
+		             lnjp:hasCountry countries:US;
+		             lnjp:company_id ?company_id;
+		             lnjp:name ?companyName.
+		    ?Industry lnjp:industry_name ?industry_name;
+		              lnjp:industry_id ?industry_id.
+		    ?company_detail lnjp:employee_count ?employee_count;
+		    			lnjp:IsForCompany ?company.
+    filter (?count=?employee_count)
+    {
+		SELECT ?industry_id ?industry_name (max(?employee_count) as ?count)
+		WHERE { 
+		    ?company lnjp:hasIndustry ?Industry.
+		    ?company a lnjp:Company;
+		             lnjp:hasCountry countries:US;
+		             lnjp:company_id ?company_id;
+		             lnjp:name ?companyName.
+		    ?Industry lnjp:industry_name ?industry_name;
+		              lnjp:industry_id ?industry_id.
+		    ?company_detail lnjp:employee_count ?employee_count;
+		    			lnjp:IsForCompany ?company.
+		} 
+		group by ?industry_id ?industry_name 
+    }
+    
+}
+LIMIT 1000
+"

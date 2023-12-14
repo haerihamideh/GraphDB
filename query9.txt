@@ -1,0 +1,32 @@
+9- list of job posting in the IT field by Google and Amazon in 2023
+
+"
+PREFIX lnjp: <http://www.dei.unipd.it/database2/LinkedinJobPosting#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX countries: <http://eulersharp.sourceforge.net/2003/03swap/countries#>
+
+SELECT distinct ?title ?country ?med_salary ?max_salary ?min_salary ?formatted_experience_level  ?company_id ?companyName ?skillName ?listed_time
+WHERE { 
+   ?jobPosting  lnjp:hasCompany ?company;
+    			lnjp:title ?title;
+       			lnjp:application_type ?application_type;
+          		lnjp:formatted_experience_level ?formatted_experience_level;
+                lnjp:original_listed_time ?listed_time;
+                lnjp:location ?location;
+                lnjp:max_salary ?max_salary;
+               	lnjp:min_salary ?min_salary;
+                lnjp:hasSkill ?skill.
+    optional{?jobPosting  lnjp:med_salary ?med_salary} 			
+    ?skill a lnjp:Skill;
+	lnjp:skill_name ?skillName;
+    lnjp:skill_abr "IT"^^xsd:string.
+    ?company a lnjp:Company;              
+   			   lnjp:company_id ?companyId;
+    		   lnjp:name ?companyName;
+               lnjp:company_id ?company_id; 
+               lnjp:hasCountry ?country;     
+    filter((regex(?companyName,"[gG]oogle")||regex(?companyName,"[Aa]mazon"))
+    && (YEAR(?listed_time) = 2023))
+} 
+LIMIT 100
+"

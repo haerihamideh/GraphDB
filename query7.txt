@@ -1,0 +1,37 @@
+7- checks whether there were more job postings in November 2023 than in August 2023 for positions related to engineering within companies across different countries
+
+"
+PREFIX lnjp: <http://www.dei.unipd.it/database2/LinkedinJobPosting#>
+ASK
+WHERE {
+  {
+    SELECT (count(?job_id) as ?count_november)
+    WHERE {
+      ?jobPosting lnjp:formatted_experience_level ?formatted_experience_level;
+                  lnjp:job_id ?job_id;
+                  lnjp:hasCompany ?company;
+                  lnjp:hasSkill ?Skill;
+                  lnjp:original_listed_time ?time_recorded.
+      ?Skill lnjp:skill_name ?skill_name.
+      ?company a lnjp:Company;
+               lnjp:hasCountry ?country;
+               filter (year(?time_recorded) = 2023 && month(?time_recorded) = 11 && regex(?skill_name , "[Ee]ngineering"))
+    }
+  }
+  {
+    SELECT (count(?job_id) as ?count_august)
+    WHERE {
+      ?jobPosting lnjp:formatted_experience_level ?formatted_experience_level;
+                  lnjp:job_id ?job_id;
+                  lnjp:hasCompany ?company;
+                  lnjp:hasSkill ?Skill;
+                  lnjp:original_listed_time ?time_recorded.
+      ?Skill lnjp:skill_name ?skill_name.
+      ?company a lnjp:Company;
+               lnjp:hasCountry ?country;
+               filter (year(?time_recorded) = 2023 && month(?time_recorded) = 8 && regex(?skill_name , "[Ee]ngineering"))
+    }
+  }
+  FILTER(?count_november < ?count_august)
+}
+"

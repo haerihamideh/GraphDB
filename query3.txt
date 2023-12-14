@@ -1,0 +1,18 @@
+3- Return remote allowed job titles with low followers and employee count more than 6000 recorded in August 2023
+
+"
+PREFIX lnjp: <http://www.dei.unipd.it/database2/LinkedinJobPosting#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+select distinct ?title ?companyName where {
+    ?job lnjp:title ?title;
+ 		lnjp:remote_allowed "1.0"^^xsd:decimal;
+ 		lnjp:hasCompany ?company.
+    ?company a lnjp:Company;
+	      lnjp:name ?companyName.
+	?personCount lnjp:IsForCompany ?company;
+				a lnjp:lowFollowers;
+				  lnjp:employee_count ?employee_count;
+				  lnjp:time_recorded ?time_recorded.
+    FILTER(?employee_count>6000 && year(?time_recorded)=2023 && month(?time_recorded)=8)
+}
+"

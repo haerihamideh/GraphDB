@@ -1,0 +1,15 @@
+1- the names of companies providing either vision or dental insurance for job postings, excluding those situated in the United States.
+
+"
+PREFIX lnjp: <http://www.dei.unipd.it/database2/LinkedinJobPosting#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX countries: <http://eulersharp.sourceforge.net/2003/03swap/countries#>
+select ?name where {
+    ?company lnjp:name ?name.
+	?job lnjp:hasCompany ?company.
+	?benefit lnjp:isForJobPosting ?job;
+         	lnjp:type ?type.
+	FILTER NOT EXISTS{?company lnjp:hasCountry countries:US}
+	FILTER(?type="Vision insurance"^^xsd:string||?type="Dental insurance"^^xsd:string)
+}
+"

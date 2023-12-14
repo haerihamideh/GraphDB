@@ -1,0 +1,30 @@
+5- Retrieve companies and their countries where the total employee count is greater than the average employee count for companies with high follower counts.
+
+"
+PREFIX lnjp: <http://www.dei.unipd.it/database2/LinkedinJobPosting#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX countries: <http://eulersharp.sourceforge.net/2003/03swap/countries#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+select distinct ?companyName ?employee_count ?Country
+where
+{
+   ?company_record rdf:type lnjp:highFollowers ;
+				lnjp:employee_count ?employee_count ;
+    			lnjp:IsForCompany ?company.
+    ?company a lnjp:Company;
+             lnjp:name ?companyName;
+             lnjp:hasCountry ?Country;
+             lnjp:hasIndustry ?industry.
+    ?industry lnjp:industry_name ?industry_name.
+    filter(?employee_count>?average)
+    {
+		select (avg(?employee_count) as ?average) where { 
+			?company_record rdf:type lnjp:highFollowers ;
+							lnjp:employee_count ?employee_count;
+       						
+		}
+    }
+}
+order by desc (?employee_count)
+"

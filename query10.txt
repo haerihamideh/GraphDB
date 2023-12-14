@@ -1,0 +1,19 @@
+10- the number of job postings of each experience_level and industry with a count exceeding 500 
+
+"
+PREFIX lnjp: <http://www.dei.unipd.it/database2/LinkedinJobPosting#>
+select (count(?job_id)as ?count) ?experience_level ?industry_name
+where { 
+	?jobPosting lnjp:formatted_experience_level ?experience_level;
+				lnjp:job_id ?job_id;
+    			lnjp:hasCompany ?company.
+    ?company a lnjp:Company;
+             lnjp:hasCountry ?country;
+             lnjp:hasIndustry ?Industry.
+    ?Industry lnjp:industry_name ?industry_name;
+		              lnjp:industry_id ?industry_id.
+}
+group by ?experience_level ?industry_name
+having(?count>500)
+order by desc(?count) desc(?industry_name) desc(?experience_level) 
+"

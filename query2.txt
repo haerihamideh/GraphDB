@@ -1,0 +1,16 @@
+2-  Do we have a large company in Great Britain (gb) with an hourly average salary more than 10 dollars?
+
+"
+PREFIX lnjp: <http://www.dei.unipd.it/database2/LinkedinJobPosting#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX countries: <http://eulersharp.sourceforge.net/2003/03swap/countries#>
+ASK where {
+    ?company lnjp:hasCountry countries:GB;
+	a lnjp:largeCompany.
+	?job lnjp:hasCompany ?company.
+	?salaries lnjp:isAllocatedFor ?job;
+	lnjp:pay_period "HOURLY";
+	lnjp:med_salary ?avg_salary ;
+	FILTER(?avg_salary>10)
+}
+"

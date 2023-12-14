@@ -1,0 +1,20 @@
+8- list of the top 10 skills based on the count of job postings in 2023
+
+"
+PREFIX lnjp: <http://www.dei.unipd.it/database2/LinkedinJobPosting#>
+select (count(?job_id)as ?count)  ?skill_name
+where { 
+	?jobPosting lnjp:formatted_experience_level ?formatted_experience_level;
+				lnjp:job_id ?job_id;
+    			lnjp:hasCompany ?company;
+       			lnjp:hasSkill ?Skill;
+          		lnjp:original_listed_time ?time_recorded.
+    ?Skill lnjp:skill_name ?skill_name.
+    ?company a lnjp:Company;
+             lnjp:hasCountry ?country;
+    filter (year(?time_recorded)=2023)          
+}
+group by  ?skill_name
+order by desc (?count)
+limit 10
+"

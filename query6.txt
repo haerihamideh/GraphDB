@@ -1,0 +1,20 @@
+6- Retrieve companies, their countries, and the count of job postings that require more than 3 skills.
+
+"
+PREFIX lnjp: <http://www.dei.unipd.it/database2/LinkedinJobPosting#>
+
+SELECT (COUNT(?skill_name) as ?skills_count) ?companyName
+WHERE {
+	?jobPosting lnjp:hasCompany ?company;
+          lnjp:job_id ?job_id;
+          lnjp:hasSkill ?Skill.
+    ?Skill a lnjp:Skill;
+           lnjp:skill_name ?skill_name.
+    ?company a lnjp:Company;
+	      lnjp:name ?companyName.
+} 
+GROUP BY ?companyName
+HAVING (?skills_count > 5)
+order by desc(?skills_count) desc(?companyName)
+limit 100
+"
