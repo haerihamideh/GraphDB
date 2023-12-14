@@ -1,0 +1,1577 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting/"
+     xml:base="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:linkedin-job-posting="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting">
+        <owl:imports rdf:resource="http://eulersharp.sourceforge.net/2003/03swap/countries"/>
+        <owl:imports rdf:resource="http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf"/>
+        <owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+        <dc:contributor>Cypher Group</dc:contributor>
+        <dc:creator>Mohammad Torabi, Ali Tahvildari, Hossein Hosseinpour, Hamideh Haeri</dc:creator>
+        <dc:description>An RDF/OWL schema for representing LinkedIn Job Postings</dc:description>
+        <dc:title>LinkedIn Job Postings Ontology</dc:title>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#IsForCompany -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#IsForCompany">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:comment>Relation between Person Counts and Company</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasCompany -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasCompany">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:comment>Relation from Company to Job Posting</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasCountry -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasCountry">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isCountryOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:range rdf:resource="http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#Country"/>
+        <rdfs:comment>Relation between Company and Country</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasIndustry -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasIndustry">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isIndustryOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Industries"/>
+        <rdfs:comment>Relation between Company and Company Industries</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasIndustryType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasIndustryType">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isIndustryTypeOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Industries"/>
+        <rdfs:comment>Relation between JobPosting and JobIndustries</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasSkill -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasSkill">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isSkillOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdfs:comment>Relation between Job Posting and Job Skills</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasSpecialities -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasSpecialities">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isSpecialityOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Specialities"/>
+        <rdfs:comment>Relation between Company and Company Specialities</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isAlocatedFor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isAlocatedFor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:comment>Relation between Salaries and JobPosting</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isBenefitOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isBenefitOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Benefits"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:comment>Relation from Benefit to Job Posting</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isCountryOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isCountryOf">
+        <rdfs:comment>Relation from Country to Company</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isIndustryOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isIndustryOf">
+        <rdfs:comment>Relation from Company Industries to Company</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isIndustryTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isIndustryTypeOf">
+        <rdfs:comment>Relation from Job Industries to Job Posting</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isSkillOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isSkillOf">
+        <rdfs:comment>Relation from Job Skills to Job Posting</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isSpecialityOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isSpecialityOf">
+        <rdfs:comment>Relation from Company Specialities to Company</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#address -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#address">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Address of company&apos;s headquarters</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#applicationType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#applicationType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Type of application process (offsite, complex/simple onsite)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#applicationUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#applicationUrl">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>URL where applications can be submitted</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#applies -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#applies">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Number of applications that have been submitted</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#city -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#city">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>City of company headquarters.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#closedTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#closedTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment>Time to close job listing</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#compansationType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#compansationType">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Type of compensation for the job.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#companyId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#companyId">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Identifier for the company associated with the job posting (maps to companies.csv)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#companySize -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#companySize">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Company grouping based on number of employees (1 Smallest - 7 Largest)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#currency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#currency">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Currency in which the salary is provided.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#description">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Job description.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#employeeCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#employeeCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Number of employees at company</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#expiary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#expiary">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment>Expiration date or time for the job listing</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#followerCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#followerCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:comment>Number of company followers on LinkedIn</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#formattedExperienceLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#formattedExperienceLevel">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Job experience level (entry, associate, executive, etc)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#industryId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#industryId">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Industries"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The industry ID.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#industryName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#industryName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Industries"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Industry name</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#inferred -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#inferred">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Benefits"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Whether the benefit was explicitly tagged or inferred through text by LinkedIn</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#jobId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#jobId">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Benefits"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:comment>The job ID as defined by LinkedIn (https://www.linkedin.com/jobs/view/ job_id)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#jobPostingDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#jobPostingDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Definition of Job Posting</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#jobPostingUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#jobPostingUrl">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>URL to the job posting on a platform</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#listedTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#listedTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment>Time when the job was listed</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#location -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#location">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Job location</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#maxSalary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#maxSalary">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+        <rdfs:comment>Maximum salary</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#medSalary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#medSalary">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Median salary</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#minSalary -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#minSalary">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Minimum salary</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Company name</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#originalListedTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#originalListedTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment>Original time the job was listed</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#payPeriod -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#payPeriod">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Pay period for salary (Hourly, Monthly, Yearly)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#postingDomain -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#postingDomain">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Domain of the website with application</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#remoteAllowed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#remoteAllowed">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Whether job permits remote work</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#salaryId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#salaryId">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The salary ID.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#skillAbr -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#skillAbr">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Skill abbreviation.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#skillName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#skillName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Skill name.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#skillsDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#skillsDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Description detailing required skills for job</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#speciality -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#speciality">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Specialities"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Speciality required.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#sponsered -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#sponsered">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:comment>Whether the job listing is sponsored or promoted.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#state -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#state">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>State of company headquarters.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#timeRecorded -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#timeRecorded">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+        <rdfs:comment>Unix time of data collection</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#title">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Job title.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#type -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#type">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Benefits"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Type of benefit provided (401K, Medical Insurance, etc)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#url -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#url">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Link to company&apos;s LinkedIn page</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#views -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#views">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Number of times the job posting has been viewed</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#workType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#workType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Type of work associated with the job</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#zipCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#zipCode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>ZIP code of company&apos;s headquarters.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#Country -->
+
+    <owl:Class rdf:about="http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#Country">
+        <rdfs:comment>Country of company headquarters.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Benefits -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Benefits">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isBenefitOf"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Benefits of job postings.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasCountry"/>
+                <owl:allValuesFrom rdf:resource="http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#Country"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasIndustry"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Industries"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasSpecialities"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Specialities"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Companies that offer job postings.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#HighFollowers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#HighFollowers">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#followerCount"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#long">201083</xsd:minExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#LowFollowers"/>
+        <rdfs:comment>Companies with more than 201083 followers</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Industries -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Industries">
+        <rdfs:comment>Names of industries</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasCompany"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasIndustryType"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Industries"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#hasSkill"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Job postings of different companies.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#LargeCompany -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#LargeCompany">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#companySize"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:comment>Companies with size between 6 and 7</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#LowFollowers -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#LowFollowers">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#followerCount"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#long"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#long">201083</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts"/>
+        <rdfs:comment>Companies with less than 201083 followers</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#MediumCompany -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#MediumCompany">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#companySize"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:comment>Companies with size between 3 and 5</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#IsForCompany"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Information about count of followers and employees and also the time recorded.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#isAlocatedFor"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Salaries of job postings.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills">
+        <rdfs:comment>Full name of skills.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#SmallCompany -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#SmallCompany">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#companySize"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <rdfs:comment>Companies with size between 1 and 2</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Specialities -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Specialities">
+        <rdfs:comment>Required specialities by companies.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Administrative -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Administrative">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#General_Business"/>
+        <skos:altLabel>administrative</skos:altLabel>
+        <skos:prefLabel>Administrative</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Advertising -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Advertising">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Marketing"/>
+        <skos:altLabel>advertising</skos:altLabel>
+        <skos:prefLabel>Advertising</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Analyst -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Analyst">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Business_Development"/>
+        <skos:altLabel>analyst</skos:altLabel>
+        <skos:prefLabel>Analyst</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Business_Development -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Business_Development">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Management"/>
+        <skos:altLabel>dusiness_development</skos:altLabel>
+        <skos:prefLabel>Business_Development</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Consulting -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Consulting">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Management"/>
+        <skos:altLabel>consulting</skos:altLabel>
+        <skos:prefLabel>Consulting</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Customer_Service -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Customer_Service">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#General_Business"/>
+        <skos:altLabel>sustomer_service</skos:altLabel>
+        <skos:prefLabel>Customer_Service</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Design -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Design">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Art/Creative"/>
+        <skos:altLabel>design</skos:altLabel>
+        <skos:prefLabel>Design</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Distribution -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Distribution">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Supply_Chain"/>
+        <skos:altLabel>distribution</skos:altLabel>
+        <skos:prefLabel>Distribution</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Education -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Education">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Engineering -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Engineering">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Science"/>
+        <skos:altLabel>engineering</skos:altLabel>
+        <skos:prefLabel>Engineering</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Finance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Finance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#General_Business"/>
+        <skos:altLabel>finance</skos:altLabel>
+        <skos:prefLabel>Finance</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#General_Business -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#General_Business">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:altLabel>general_business</skos:altLabel>
+        <skos:prefLabel>General_Business</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Health_Care_Provider -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Health_Care_Provider">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:altLabel>health_care_provider</skos:altLabel>
+        <skos:prefLabel>Health_Care_Provider</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Human_Resources -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Human_Resources">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Management"/>
+        <skos:altLabel>human_resources</skos:altLabel>
+        <skos:prefLabel>Human_Resources</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Information_Technology -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Information_Technology">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:altLabel>information_technology</skos:altLabel>
+        <skos:prefLabel>Information_Technology</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting0">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+        <linkedin-job-posting:jobId rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1</linkedin-job-posting:jobId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Legal -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Legal">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broadMatch rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#General_Business"/>
+        <skos:altLabel>legal</skos:altLabel>
+        <skos:prefLabel>Legal</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Management -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Management">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#General_Business"/>
+        <skos:altLabel>management</skos:altLabel>
+        <skos:prefLabel>Management</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Manufacturing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Manufacturing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Production"/>
+        <skos:altLabel>manufacturing</skos:altLabel>
+        <skos:prefLabel>Manufacturing</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Marketing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Marketing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#General_Business"/>
+        <skos:altLabel>marketing</skos:altLabel>
+        <skos:prefLabel>Marketing</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Other -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Other"/>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PaidMaternityLeave -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PaidMaternityLeave">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Benefits"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PaidPaternityLeave -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PaidPaternityLeave">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Benefits"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Product_Management -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Product_Management">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Management"/>
+        <skos:altLabel>product_management</skos:altLabel>
+        <skos:prefLabel>Product_Management</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Production -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Production">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#General_Business"/>
+        <skos:altLabel>production</skos:altLabel>
+        <skos:prefLabel>Production</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Project_Management -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Project_Management">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Management"/>
+        <skos:altLabel>project_management</skos:altLabel>
+        <skos:prefLabel>Project_Management</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Public_Relations -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Public_Relations">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Marketing"/>
+        <skos:altLabel>public_relations</skos:altLabel>
+        <skos:prefLabel>Public_Relations</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Purchasing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Purchasing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Supply_Chain"/>
+        <skos:altLabel>purchasing</skos:altLabel>
+        <skos:prefLabel>Purchasing</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Quality_Assurance -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Quality_Assurance">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Research"/>
+        <skos:altLabel>quality_assurance</skos:altLabel>
+        <skos:prefLabel>Quality_Assurance</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Research -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Research">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Science"/>
+        <skos:altLabel>research</skos:altLabel>
+        <skos:prefLabel>Research</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Sales -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Sales">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#General_Business"/>
+        <skos:altLabel>sales</skos:altLabel>
+        <skos:prefLabel>Sales</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Science -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Science">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:altLabel>science</skos:altLabel>
+        <skos:prefLabel>Science</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Supply_Chain -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Supply_Chain">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#General_Business"/>
+        <skos:altLabel>supply_chain</skos:altLabel>
+        <skos:prefLabel>Supply_Chain</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Training -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Training">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:altLabel>training</skos:altLabel>
+        <skos:prefLabel>Training</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#comp1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#comp1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <linkedin-job-posting:companySize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2</linkedin-job-posting:companySize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#comp2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#comp2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <linkedin-job-posting:companySize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3</linkedin-job-posting:companySize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#comp3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#comp3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+        <linkedin-job-posting:companySize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">7</linkedin-job-posting:companySize>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#personC1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#personC1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts"/>
+        <linkedin-job-posting:followerCount rdf:datatype="http://www.w3.org/2001/XMLSchema#long">5</linkedin-job-posting:followerCount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#personC2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#personC2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts"/>
+        <linkedin-job-posting:followerCount rdf:datatype="http://www.w3.org/2001/XMLSchema#long">241253</linkedin-job-posting:followerCount>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#salary1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#salary1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries"/>
+        <linkedin-job-posting:maxSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#long">70000</linkedin-job-posting:maxSalary>
+        <linkedin-job-posting:minSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#long">68000</linkedin-job-posting:minSalary>
+        <linkedin-job-posting:payPeriod>HOURLY</linkedin-job-posting:payPeriod>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#salary2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#salary2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries"/>
+        <linkedin-job-posting:medSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4000</linkedin-job-posting:medSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#salary3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#salary3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries"/>
+        <linkedin-job-posting:maxSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#int">50</linkedin-job-posting:maxSalary>
+        <linkedin-job-posting:minSalary rdf:datatype="http://www.w3.org/2001/XMLSchema#int">50</linkedin-job-posting:minSalary>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Accounting/Auditing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Accounting/Auditing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Finance"/>
+        <skos:altLabel>Accounting_Auditing</skos:altLabel>
+        <skos:prefLabel>Accounting/Auditing</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Art/Creative -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Art/Creative">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:altLabel>Art_Creative</skos:altLabel>
+        <skos:prefLabel>Art/Creative</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Strategy/Planning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Strategy/Planning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Management"/>
+        <skos:altLabel>Strategy_Planning</skos:altLabel>
+        <skos:prefLabel>Strategy/Planning</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Writing/Editing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Writing/Editing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+        <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <skos:broaderTransitive rdf:resource="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Art/Creative"/>
+        <skos:altLabel>Writing_Editing</skos:altLabel>
+        <skos:prefLabel>Writing/Editing</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://sweet.jpl.nasa.gov/2.3/humanJurisdiction.owl#Country"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Benefits"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Company"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Industries"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#JobPosting"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#PersonCounts"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Salaries"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Skills"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#Specialities"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#LargeCompany"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#MediumCompany"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/alitahvildari/ontologies/2023/10/linkedin-job-posting#SmallCompany"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
